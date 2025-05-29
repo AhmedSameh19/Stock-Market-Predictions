@@ -40,20 +40,15 @@ The system predicts the **next-day price delta** (`Close - Open`) for selected s
 
 ### Clone the repo:
 ```bash
-git clone https://github.com/your-username/stock-forecast-ilp.git
-cd stock-forecast-ilp
-```
-
-### Install requirements:
-```bash
-pip install -r requirements.txt
+git clone https://github.com/AhmedSameh19/Stock-Market-Predictions.git
+cd Stock-Market-Predictions
 ```
 
 ### Run the training + forecasting:
 ```python
 from model import LSTMTrader
 
-model = LSTMTrader(ticker='AAPL', backcandles=60, days=10)
+model = LSTMTrader(ticker, backcandles=60, days=10)
 model.run_full_pipeline()
 ```
 
@@ -77,27 +72,6 @@ plan, invested, profit = optimize_trades_with_ilp(preds, budget=1000)
 
 ---
 
-## 📁 Folder Structure
-
-```
-├── model.py               # LSTM, CNN+LSTM, forecasting, evaluation
-├── ilp_optimizer.py       # ILP formulation for stock allocation
-├── utils/                 # Helper utilities
-├── plots/                 # Generated evaluation graphs
-├── ref.bib                # BibTeX references
-├── README.md
-└── requirements.txt
-```
-
----
-
-## 📸 Visuals
-
-> ![LSTM vs CNN+LSTM comparison](plots/metrics_comparison.png)  
-> _Figure: Model evaluation comparing LSTM and CNN+LSTM (Test Set)_
-
----
-
 ## 🧪 Experimental Highlights
 
 | Metric | LSTM (Test) | CNN+LSTM (Test) |
@@ -111,7 +85,7 @@ plan, invested, profit = optimize_trades_with_ilp(preds, budget=1000)
 ## 📌 Future Enhancements
 
 - Integrate real-time price feeds for live trading  
-- Add hyperparameter tuning (e.g., using Optuna)  
+- Add hyperparameter tuning  
 - Explore transformer-based architectures  
 - Support multi-asset and multi-day decision chains
 
@@ -123,6 +97,4 @@ Special thanks to **Dr. Gamal A. Ebrahim** for his supervision and guidance thro
 
 ---
 
-## 📜 License
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
